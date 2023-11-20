@@ -64,8 +64,8 @@ public class ElevatorSimulationConfig {
         return duration;
     }
 
-    // Main method for testing purposes
-    public static void main(String[] args) {
+
+    public static void main(String[] args){
         ElevatorSimulationConfig config;
 
         // Use the first argument as the properties file path

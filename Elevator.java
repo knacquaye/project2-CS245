@@ -3,7 +3,7 @@ import java.util.*;
 public class Elevator {
     private static final String UP = "up";
     private static final String DOWN = "down";
-    private static final String IDLE = "idle";
+    private  static final String IDLE = "idle";
 
 
     private int currentFloor;
@@ -144,7 +144,6 @@ public class Elevator {
         return getTotalPassengerCount() >= capacity;
     }
 
-    // New methods to get average, longest, and shortest times
     public double getAverageTime() {
         double averageTime;
         if (passengersDelivered == 0) {
@@ -162,6 +161,13 @@ public class Elevator {
     public int getShortestTime() {
         return (shortestTime == Integer.MAX_VALUE) ? 0 : shortestTime;
     }
+    public PriorityQueue<Passenger> getUpHeap() {
+        return upHeap;
+    }
+
+    public PriorityQueue<Passenger> getDownHeap() {
+        return downHeap;
+    }
 
     // toString method for debugging
     @Override
@@ -174,36 +180,11 @@ public class Elevator {
                 ", passengersGoingDown=" + downHeap.size() +
                 '}';
     }
-//test case
 
 
-//        public static void main(String[] args) {
-//            // Step 1: Initialize Elevator
-//            Elevator elevator = new Elevator(2);
-//
-//            // Step 2: Create Passengers
-//            Passenger p1 = new Passenger(1, 5, 0); // floor 1 to 5, arrival time 0
-//            Passenger p2 = new Passenger(1, 6, 3); // floor 1 to 6, arrival time 3
-//            Passenger p3 = new Passenger(3, 2, 7); // floor 3 to 2, arrival time 7
-//            Passenger p4 = new Passenger(3, 1, 9); // floor 3 to 1, arrival time 9
-//
-//            // Step 3: Simulate Elevator Movements
-//            List<Passenger> firstBatch = new ArrayList<>(Arrays.asList(p1, p2));
-//            List<Passenger> secondBatch = new ArrayList<>(Arrays.asList(p3, p4));
-//
-//            elevator.loadPassengers(firstBatch, 5); // Load at time 5
-//            elevator.moveToFloor(5, 10); // Move to floor 5 at time 10
-//            elevator.moveToFloor(6, 12); // Move to floor 6 at time 12
-//            elevator.loadPassengers(secondBatch, 12); // Load at time 12
-//            elevator.moveToFloor(2, 15); // Move to floor 2 at time 15
-//            elevator.moveToFloor(1, 18); // Move to floor 1 at time 18
-//
-//            // Step 4: Check Results
-//            System.out.println("Average Time: " + elevator.getAverageTime());
-//            System.out.println("Longest Time: " + elevator.getLongestTime());
-//            System.out.println("Shortest Time: " + elevator.getShortestTime());
-//        }
-//    }
+
+
+
 
 
 }
